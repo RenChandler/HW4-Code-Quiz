@@ -1,5 +1,9 @@
+//variables to manipulate dom
 const start = document.getElementById("startBtn");
 const time = document.getElementById("countdown");
+const questionEl = document.getElementById("questionSection");
+const answers = document.getElementById("options");
+var startTime = 75;
 
 var questions = [
   {
@@ -29,8 +33,28 @@ var questions = [
   },
 ];
 
+function timer(){
+setInterval(
+  countdown,1000
+)
+
+}
+
+function countdown(){
+
+  startTime--;
+  time.textContent = startTime;
+  console.log(startTime);
+  if (startTime <=0){
+    clearInterval(startTime = 0)
+  };
+
+}
+
 //function to start quiz
 function startQuiz() {}
 
 //function to contain results
 function results() {}
+
+start.onclick = timer()
